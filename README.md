@@ -90,9 +90,7 @@ Neural-Networks-Project/
 ├── README.md
 └── data/ (auto downloaded)
 
-Conclusion
 
-This project demonstrates the implementation of a Multilayer Perceptron for image classification. It shows how architectural choices and hyperparameters affect model performance. Experimentation confirms that increasing model capacity and tuning learning rate improves results.
 
 Dataset Source
 
