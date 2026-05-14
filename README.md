@@ -43,9 +43,13 @@ Results
 Training loss decreases over epochs
 Accuracy increases during training
 Experiment 2 shows better performance due to higher model capacity and smoother activation
-Final Results (Example Output):
-Test Accuracy: approximately 87% - 90%
+Final Results:
+Test Accuracy: approximately 87% – 90%
 Final Loss: depends on training run
+Comparison Table
+Experiment	                Accuracy  Loss
+Exp 1 (ReLU, 128, lr=0.001) 	~87%	 Higher
+Exp 2 (Tanh, 256, lr=0.0005)	~89%	Lower
 Visualizations
 
 The following plots are included:
@@ -53,9 +57,9 @@ The following plots are included:
 Training Loss Curve
 Accuracy Curve
 
-These graphs show:
+These plots show:
 
-How the model learns over time
+Learning behavior over epochs
 Comparison between experiments
 Techniques Used
 Dropout
@@ -89,7 +93,6 @@ Neural-Networks-Project/
 ├── requirements.txt
 ├── README.md
 └── data/ (auto downloaded)
-
 
 
 Dataset Source
