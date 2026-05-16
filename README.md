@@ -62,9 +62,9 @@ Input (28×28 = 784)
 
 | Experiment | Activation | Hidden Size | Learning Rate | Test Accuracy |
 |------------|------------|-------------|---------------|---------------|
-| Exp1 — Baseline | ReLU | 128 | 0.001 | ~87–88% |
-| Exp2 — Tanh | Tanh | 128 | 0.001 | ~86–87% |
-| Exp3 — Lower LR | ReLU | 128 | 0.0005 | ~86–87% |
+| Exp1  | ReLU | 128 | 0.001 | ~87–88% |
+| Exp2  | Tanh | 128 | 0.001 | ~86–87% |
+| Exp3  | ReLU | 128 | 0.0005 | ~86–87% |
 
 > **Note:** Exact values vary slightly across runs due to random initialization. Results above are representative of typical outcomes over 5 epochs.
 
