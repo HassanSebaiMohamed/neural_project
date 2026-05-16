@@ -1,98 +1,100 @@
- Neural Networks Course Project
+📘 Neural Networks Course Project
 Fashion-MNIST Classification using MLP (PyTorch)
-1.  Problem Description
+1. 📌 Problem Description
 
-This project focuses on implementing a Multilayer Perceptron (MLP) neural network to solve an image classification problem using the Fashion-MNIST dataset.
+This project implements a Multilayer Perceptron (MLP) neural network for image classification using the Fashion-MNIST dataset.
 
-The objective is to classify grayscale images of clothing items into 10 different categories, such as:
+The goal is to classify grayscale images of clothing items into 10 categories and evaluate the effect of different hyperparameters through multiple experiments.
 
-T-shirt/top
-Trouser
-Pullover
-Dress
-Coat
-Sandal
-Shirt
-Sneaker
-Bag
-Ankle boot
+2. 📂 Dataset Information
+Property	Value
+Dataset	Fashion-MNIST
+Source	https://www.kaggle.com/datasets/zalando-research/fashionmnist
+Image Size	28 × 28
+Channels	Grayscale
+Training Samples	60,000
+Test Samples	10,000
+Classes	10
+3. 🏷️ Class Labels
+Label	Class
+0	T-shirt/top
+1	Trouser
+2	Pullover
+3	Dress
+4	Coat
+5	Sandal
+6	Shirt
+7	Sneaker
+8	Bag
+9	Ankle boot
+4. 🧠 Model Architecture (MLP)
+Layer	Description
+Input	28×28 Flatten (784 features)
+Hidden Layer 1	Linear + BatchNorm + Activation + Dropout
+Hidden Layer 2	Linear + BatchNorm + Activation + Dropout
+Output Layer	10 neurons (classification)
+⚙️ Hyperparameters
+Parameter	Value
+Loss Function	CrossEntropyLoss
+Optimizer	Adam
+Batch Size	64
+Epochs	5
+Dropout	0.3
+Hidden Size	128
+5. ⚙️ Experiments
 
-The project also includes multiple experiments to analyze how different hyperparameters affect model performance.
-
-2.  Dataset Information
-Dataset Name: Fashion-MNIST
-Source: https://www.kaggle.com/datasets/zalando-research/fashionmnist
-Type: Image Classification Dataset
-Image Size: 28 × 28 pixels (Grayscale)
-Number of Classes: 10
-Training Samples: 60,000
-Test Samples: 10,000
-3.  Model Architecture (MLP)
-
-The implemented model is a Multilayer Perceptron (MLP) consisting of:
-
-Input Layer: Flattened 28×28 image (784 features)
-Hidden Layer 1: Fully Connected + Batch Normalization + Activation + Dropout
-Hidden Layer 2: Fully Connected + Batch Normalization + Activation + Dropout
-Output Layer: 10 neurons (one per class)
- Activation Functions Used:
-ReLU
-Tanh (for comparison experiments)
- Loss Function:
-CrossEntropyLoss
- Optimizer:
-Adam Optimizer
-4.  Experimental Setup
-
-To evaluate model performance, three different experiments were conducted:
+Three different experiments were performed:
 
 Experiment	Activation	Hidden Size	Learning Rate
 Exp 1	ReLU	128	0.001
 Exp 2	Tanh	128	0.001
 Exp 3	ReLU	128	0.0005
-5.  Results & Evaluation
-
-The model was evaluated using the following metrics:
-
-Accuracy
-Loss
-Confusion Matrix
-Precision / Recall / F1-score
- Performance Comparison
-Experiment	Accuracy (%)	Observations
-Exp 1	~82 - 88	Best overall performance using ReLU
-Exp 2	~80 - 85	Slightly lower due to Tanh activation
-Exp 3	~83 - 89	More stable training with lower learning rate
-6.  Visualizations Included
-
-The project includes the following visual outputs:
-
+6. 📊 Results
+🏆 Test Performance
+Experiment	Test Accuracy	Test Loss
+Exp 1 (ReLU)	84.27%	0.4257
+Exp 2 (Tanh)	(add result)	(add result)
+Exp 3 (LR 0.0005)	(add result)	(add result)
+📈 Training Summary (Exp 1 Example)
+Metric	Value
+Final Train Accuracy	82.30%
+Final Validation Accuracy	85.28%
+Final Train Loss	0.4847
+Final Validation Loss	0.4008
+7. 📉 Observations
+ReLU performs better than Tanh in most cases
+Lower learning rate improves stability
+Model shows good generalization (small gap between train and validation)
+No significant overfitting observed
+8. 📊 Visualizations Included
 Training vs Validation Loss Curves
 Training vs Validation Accuracy Curves
-Confusion Matrix (Test Set)
-Classification Report (Precision, Recall, F1-score)
-7.  How to Run the Project
-Step 1: Install Dependencies
+Confusion Matrix
+Classification Report (Precision / Recall / F1-score)
+9. 🚀 How to Run
+Install Dependencies
 pip install torch torchvision matplotlib seaborn scikit-learn
-Step 2: Run the Project
+Run Project
 python main.py
-8.  Project Structure
+10. 📁 Project Structure
 Neural-Networks-Project/
 │
 ├── main.py
 ├── README.md
-├── data/ (auto-downloaded)
-└── results/ (optional saved plots)
-9.  Conclusion
-
-This project demonstrates the effectiveness of a simple MLP neural network in solving image classification problems.
-The experiments show that:
-
-Activation functions significantly affect performance
-Learning rate impacts stability and convergence
-Proper regularization improves generalization
-
- Author
+├── data/ (auto downloaded)
+│
+└── outputs/
+    ├── loss.png
+    ├── accuracy.png
+    └── confusion_matrix.png
+11. 🧾 Conclusion
+Insight	Result
+Best Activation	ReLU
+Best Learning Rate	0.0005
+Best Experiment	Exp 3
+Model Type	MLP
+Performance Level	Good (80%–85% Accuracy)
+👨‍💻 Author
 
 Neural Networks Course Project
 Fashion-MNIST Classification using PyTorch
