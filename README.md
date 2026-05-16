@@ -18,16 +18,16 @@ Image Size: 28 × 28 pixels (grayscale)
 Classes: 10 clothing categories
 Training Samples: 60,000
 Test Samples: 10,000
-🏷️ Class Labels
-Label	Class
-0	T-shirt/top
-1	Trouser
-2	Pullover
-3	Dress
-4	Coat
-5	Sandal
-6	Shirt
-7	Sneaker
+ Class Labels
+Label	                Class
+0	               T-shirt/top
+1	                Trouser
+2	          Pullover
+3	             Dress
+4	           Coat
+5	               Sandal
+6	          Shirt
+7	S neaker
 8	Bag
 9	Ankle boot
 ⚙️ Preprocessing
