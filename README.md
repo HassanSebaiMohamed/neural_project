@@ -1,100 +1,113 @@
-Neural Networks Project – MLP (Fashion-MNIST)
-Problem Description
+ Neural Networks Project – MLP (Fashion-MNIST)
+ Problem Description
 
 This project implements a Multilayer Perceptron (MLP) model to classify images from the Fashion-MNIST dataset into 10 categories of clothing items such as T-shirts, trousers, shoes, etc.
 
-The goal is to study neural network performance and analyze how different hyperparameters affect accuracy and loss.
+The main objective of this project is to study neural network behavior and analyze how different hyperparameters affect model performance in terms of accuracy and loss.
 
-Dataset
+ Dataset
 Name: Fashion-MNIST
-Link: https://github.com/zalandoresearch/fashion-mnist
+Source: https://github.com/zalandoresearch/fashion-mnist
 Type: Image Classification Dataset
 Image Size: 28 × 28 grayscale
 Number of Classes: 10
-Model Architecture
+
+The dataset is split into training, validation, and testing sets.
+A validation split is created from the training data (80/20 split).
+
+ Model Architecture
 
 A Multilayer Perceptron (MLP) is used with the following structure:
 
 Input Layer: 784 neurons (flattened 28×28 images)
-Hidden Layer 1: 128 / 256 neurons
-Hidden Layer 2: 64 / 128 neurons
-Output Layer: 10 neurons (classification)
-Activation Functions:
-ReLU (Experiment 1)
+Hidden Layer 1: hidden_size neurons (128 or 256)
+Hidden Layer 2: hidden_size / 2 neurons (64 or 128)
+Output Layer: 10 neurons (one per class)
+ Activation Functions
+ReLU (Experiment 1 & 3)
 Tanh (Experiment 2)
-Loss Function:
+ Loss Function
 CrossEntropyLoss
-Optimizer:
-Adam
-Data Preprocessing
-Images are normalized using mean = 0.5 and std = 0.5
-Data augmentation applied:
+ Optimizer
+Adam optimizer
+ Data Preprocessing
+
+The following preprocessing steps were applied:
+
+Normalization using mean = 0.5 and std = 0.5
+Data Augmentation:
 Random rotation
 Random horizontal flip
-Train/Test split is provided by dataset automatically
-Experiments
 
-Two experiments were conducted by changing activation function, hidden layer size, and learning rate.
+These techniques help improve model generalization and reduce overfitting.
+
+ Experiments
+
+Three experiments were conducted to analyze the effect of different hyperparameters on model performance.
 
 Experiment	Activation	Hidden Size	Learning Rate	Description
 Exp 1	ReLU	128	0.001	Baseline model
-Exp 2	Tanh	256	0.0005	Improved model capacity
-Results
-Training loss decreases over epochs
-Accuracy increases during training
-Experiment 2 shows better performance due to higher model capacity and smoother activation
-Final Results:
-Test Accuracy: approximately 87% – 90%
-Final Loss: depends on training run
-Comparison Table
-Experiment	                Accuracy  Loss
-Exp 1 (ReLU, 128, lr=0.001) 	~87%	 Higher
-Exp 2 (Tanh, 256, lr=0.0005)	~89%	Lower
-Visualizations
+Exp 2	Tanh	128	0.001	Effect of activation change
+Exp 3	ReLU	128	0.0005	Effect of learning rate change
+ Experiment Strategy
 
-The following plots are included:
+Each experiment changes only one parameter at a time to ensure a fair and scientific comparison.
 
-Training Loss Curve
-Accuracy Curve
+📈 Results & Observations
+Training loss decreases steadily over epochs
+Validation accuracy improves consistently
+Model performance is sensitive to activation function and learning rate
+ReLU generally converges faster than Tanh
+ Final Results
+Test accuracy varies per experiment depending on hyperparameters
+Overall performance range is approximately consistent across runs
+ Comparison Table
+Experiment	               Accuracy	    Loss
+Exp 1 (ReLU, 128, lr=0.001)	~88%	    Higher
+Exp 2 (Tanh, 128, lr=0.001)	~86–87%	  Medium
+Exp 3 (ReLU, 128, lr=0.0005)	~89%	   Lower
+ Visualizations
 
-These plots show:
+The following plots are included in the project:
+
+Training vs Validation Loss Curves
+Training vs Validation Accuracy Curves
+
+These visualizations help analyze:
 
 Learning behavior over epochs
+Overfitting / underfitting patterns
 Comparison between experiments
-Techniques Used
-Dropout
+ Techniques Used
+ Dropout
 
 Used to reduce overfitting by randomly disabling neurons during training.
 
-Data Augmentation
+ Batch Normalization
+
+Applied after fully connected layers to stabilize training and improve convergence speed.
+
+ Data Augmentation
 
 Used to increase dataset diversity and improve generalization.
 
-Hyperparameter Tuning
+ Hyperparameter Tuning
 
-Different values of:
+The following parameters were tested:
 
 Activation functions
-Hidden layer sizes
 Learning rate
-
-were tested to analyze their effect on performance.
-
-How to Run the Project
-
-pip install torch torchvision matplotlib
+Hidden layer size
+ How to Run the Project
+pip install torch torchvision matplotlib seaborn scikit-learn
 python project.py
-
-Project Structure
-
+ Project Structure
 Neural-Networks-Project/
-│
-├── project.py
-├── requirements.txt
-├── README.md
-└── data/ (auto downloaded)
+project.py
+requirements.txt
+ README.md
+data/   (auto downloaded)
 
-
-Dataset Source
+ Dataset Source
 
 https://github.com/zalandoresearch/fashion-mnist
