@@ -1,113 +1,98 @@
- Neural Networks Project – MLP (Fashion-MNIST)
- Problem Description
+ Neural Networks Course Project
+Fashion-MNIST Classification using MLP (PyTorch)
+1.  Problem Description
 
-This project implements a Multilayer Perceptron (MLP) model to classify images from the Fashion-MNIST dataset into 10 categories of clothing items such as T-shirts, trousers, shoes, etc.
+This project focuses on implementing a Multilayer Perceptron (MLP) neural network to solve an image classification problem using the Fashion-MNIST dataset.
 
-The main objective of this project is to study neural network behavior and analyze how different hyperparameters affect model performance in terms of accuracy and loss.
+The objective is to classify grayscale images of clothing items into 10 different categories, such as:
 
- Dataset
-Name: Fashion-MNIST
-Source: https://github.com/zalandoresearch/fashion-mnist
+T-shirt/top
+Trouser
+Pullover
+Dress
+Coat
+Sandal
+Shirt
+Sneaker
+Bag
+Ankle boot
+
+The project also includes multiple experiments to analyze how different hyperparameters affect model performance.
+
+2.  Dataset Information
+Dataset Name: Fashion-MNIST
+Source: https://www.kaggle.com/datasets/zalando-research/fashionmnist
 Type: Image Classification Dataset
-Image Size: 28 × 28 grayscale
+Image Size: 28 × 28 pixels (Grayscale)
 Number of Classes: 10
+Training Samples: 60,000
+Test Samples: 10,000
+3.  Model Architecture (MLP)
 
-The dataset is split into training, validation, and testing sets.
-A validation split is created from the training data (80/20 split).
+The implemented model is a Multilayer Perceptron (MLP) consisting of:
 
- Model Architecture
-
-A Multilayer Perceptron (MLP) is used with the following structure:
-
-Input Layer: 784 neurons (flattened 28×28 images)
-Hidden Layer 1: hidden_size neurons (128 or 256)
-Hidden Layer 2: hidden_size / 2 neurons (64 or 128)
+Input Layer: Flattened 28×28 image (784 features)
+Hidden Layer 1: Fully Connected + Batch Normalization + Activation + Dropout
+Hidden Layer 2: Fully Connected + Batch Normalization + Activation + Dropout
 Output Layer: 10 neurons (one per class)
- Activation Functions
-ReLU (Experiment 1 & 3)
-Tanh (Experiment 2)
- Loss Function
+ Activation Functions Used:
+ReLU
+Tanh (for comparison experiments)
+ Loss Function:
 CrossEntropyLoss
- Optimizer
-Adam optimizer
- Data Preprocessing
+ Optimizer:
+Adam Optimizer
+4.  Experimental Setup
 
-The following preprocessing steps were applied:
+To evaluate model performance, three different experiments were conducted:
 
-Normalization using mean = 0.5 and std = 0.5
-Data Augmentation:
-Random rotation
-Random horizontal flip
+Experiment	Activation	Hidden Size	Learning Rate
+Exp 1	ReLU	128	0.001
+Exp 2	Tanh	128	0.001
+Exp 3	ReLU	128	0.0005
+5.  Results & Evaluation
 
-These techniques help improve model generalization and reduce overfitting.
+The model was evaluated using the following metrics:
 
- Experiments
+Accuracy
+Loss
+Confusion Matrix
+Precision / Recall / F1-score
+ Performance Comparison
+Experiment	Accuracy (%)	Observations
+Exp 1	~82 - 88	Best overall performance using ReLU
+Exp 2	~80 - 85	Slightly lower due to Tanh activation
+Exp 3	~83 - 89	More stable training with lower learning rate
+6.  Visualizations Included
 
-Three experiments were conducted to analyze the effect of different hyperparameters on model performance.
-
-Experiment	Activation	Hidden Size	Learning Rate	Description
-Exp 1	ReLU	128	0.001	Baseline model
-Exp 2	Tanh	128	0.001	Effect of activation change
-Exp 3	ReLU	128	0.0005	Effect of learning rate change
- Experiment Strategy
-
-Each experiment changes only one parameter at a time to ensure a fair and scientific comparison.
-
-📈 Results & Observations
-Training loss decreases steadily over epochs
-Validation accuracy improves consistently
-Model performance is sensitive to activation function and learning rate
-ReLU generally converges faster than Tanh
- Final Results
-Test accuracy varies per experiment depending on hyperparameters
-Overall performance range is approximately consistent across runs
- Comparison Table
-Experiment	               Accuracy	    Loss
-Exp 1 (ReLU, 128, lr=0.001)	~88%	    Higher
-Exp 2 (Tanh, 128, lr=0.001)	~86–87%	  Medium
-Exp 3 (ReLU, 128, lr=0.0005)	~89%	   Lower
- Visualizations
-
-The following plots are included in the project:
+The project includes the following visual outputs:
 
 Training vs Validation Loss Curves
 Training vs Validation Accuracy Curves
-
-These visualizations help analyze:
-
-Learning behavior over epochs
-Overfitting / underfitting patterns
-Comparison between experiments
- Techniques Used
- Dropout
-
-Used to reduce overfitting by randomly disabling neurons during training.
-
- Batch Normalization
-
-Applied after fully connected layers to stabilize training and improve convergence speed.
-
- Data Augmentation
-
-Used to increase dataset diversity and improve generalization.
-
- Hyperparameter Tuning
-
-The following parameters were tested:
-
-Activation functions
-Learning rate
-Hidden layer size
- How to Run the Project
+Confusion Matrix (Test Set)
+Classification Report (Precision, Recall, F1-score)
+7.  How to Run the Project
+Step 1: Install Dependencies
 pip install torch torchvision matplotlib seaborn scikit-learn
-python project.py
- Project Structure
+Step 2: Run the Project
+python main.py
+8.  Project Structure
 Neural-Networks-Project/
-project.py
-requirements.txt
- README.md
-data/   (auto downloaded)
+│
+├── main.py
+├── README.md
+├── data/ (auto-downloaded)
+└── results/ (optional saved plots)
+9.  Conclusion
 
- Dataset Source
+This project demonstrates the effectiveness of a simple MLP neural network in solving image classification problems.
+The experiments show that:
 
-https://github.com/zalandoresearch/fashion-mnist
+Activation functions significantly affect performance
+Learning rate impacts stability and convergence
+Proper regularization improves generalization
+
+ Author
+
+Neural Networks Course Project
+Fashion-MNIST Classification using PyTorch
