@@ -3,7 +3,7 @@ Fashion-MNIST Classification — Neural Networks Project
 Neural Networks Course Project
 Multilayer Perceptron (MLP) implemented using PyTorch
 
-📌 Problem Description
+Problem Description
 
 This project addresses the image classification problem using the Fashion-MNIST dataset.
 
